@@ -1,2 +1,2 @@
 # Lab 2 - Starter
-https://nomorecsesoon.github.io/CSE110_Lab2_Starter/
+https://nomorecsesoon.github.io/sp23-cse110-lab3/
