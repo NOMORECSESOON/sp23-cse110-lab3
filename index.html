@@ -1,6 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+        body {
+        background-color: lightblue;
+        }
+        /* Media Query */
+        @media only screen and (max-width: 600px) {
+        body {
+            background-color: #00bfff;
+            }
+        }
+        @font-face {
+        font-family: 'MyCustomFont';
+        src: url('BrunoAce-Regular.ttf') format('truetype');
+        }
+        /* universal selector */
+        * {
+        font-family: 'MyCustomFont', sans-serif;
+        }
+        /* element seloctor */
+        h1 {
+        /* try position here */
+        position: relative;
+        display: block;
+        text-decoration:underline;
+        text-align: left; 
+        color:rgb(0,255,0);
+        font-size: 2em;
+        line-height: 2ex;
+        width:1ch;
+        }
+        /* making the title green an be in the center of the line */
+        h2 {
+        font-family: 'MyCustomFont', sans-serif;
+        /* try position here */
+        position: static;
+        font-size: 25px;
+        line-height: 10mm;
+        }
+        div {
+        background-color: lightgrey;
+        width: 300px;
+        border-style :solid;
+        border-color :pink;
+        border-width: 15px;
+        border-radius:0cm;
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 80px;
+        }
+        h1 {
+        background-color: lightgrey;
+        width: 300px;
+        border: solid green 15px;
+        padding: 50px 30px 50px 80px;
+        margin: 25px 50px 75px 100px;
+        }
+        h3 {
+        background-color: lightgrey;
+        width: 300px;
+        border: solid orange 15px;
+        padding: 50px 30px 50px 80px;
+        margin: auto;
+        }
+        /* trying pseudo-class */
+        a:link {
+        color: red;
+        }
+        /* visited link */
+        a:visited {
+        color: green;
+        }
+        /* mouse over link */
+        /* Pseudo-class Selector */
+        a:hover {
+          color: hotpink;
+        }
+        /* selected link */
+        a:active {
+        color: blue;
+        }
+        /* Class Selector */
+        .my-class {
+        color: red;
+        font-size: 16px;
+        }
+        /* ID selector */
+        #my-div {
+        color: pink;
+        font-size: 16px;
+        }
+        /* attribute */
+        a[target] {
+        background-color: yellow;
+        }
+        /*list Selector List */
+        h3,h4{
+            color: red;
+        }
+        /* child selector */
+        div > p {
+        background-color: green;
+        }
+        /* descendant selector */
+        ul li {
+        background-color: purple;
+        }
+        /* Sibling selector */
+        h1 ~ h2 {
+        background-color: yellow;
+        }
+        /* adjacent selector */
+        div + p {
+        color: rgb(199, 39, 65);
+        }
+        /* combining two selector */
+        p.changeorange {
+        font-size: 16px;
+        color: orange;
+        }
+        p.example#first_orange {
+        font-size: 16px;
+        color: orange;
+        }
+    </style>
     <title>CSE110-Lab2
     </title>
     <meta name="author" content="Haoyang Wang">
@@ -11,17 +140,20 @@
         <header>
             <h1>Meeting Notes
             </h1>
-            <h2>posted by Haoyang Wang</h2>
+            <h2 class="my-class">posted by Haoyang Wang</h2>
         </header>
         <details>
             <summary>summary is listed here</summary>
             <ol>
-                <li>brainstorming</li>
-                <li>check-ins</li>
+                <li id="my-div">brainstorming</li>
+                <li id="my-div">check-ins</li>
+                <li style="display: none;">trying display none</li>
+                <!-- here use the display none -->
+
             </ol>
         </details>
         <nav>
-            <a href="https://docs.google.com/document/d/1eKKcCGfc6JPMKwI1fiaerA9qbGnQYz80Vp0Piis_lnk/edit?usp=sharing">Not enough information? Leave a message here.</a>
+            <a href="https://docs.google.com/document/d/1eKKcCGfc6JPMKwI1fiaerA9qbGnQYz80Vp0Piis_lnk/edit?usp=sharing" target="_blank">Not enough information? Leave a message here.</a>
         </nav>
         <br>
         <img src="https://images.thequint.com/thequint%2F2015-06%2Fa8e40fb6-cda6-40f4-bb46-a095dbe8156a%2FBaby.jpg?auto=format%2Ccompress&fmt=webp&width=720" alt="kid">
@@ -31,15 +163,18 @@
                 brainstorming
             </h3>
             <h4>4/14/2023</h4>
-            <p> peopel attended are:</p>
-            <ul>
+            <p class="changeorange" id="first_orange"> peopel attended are:</p>
+            <!-- using layout flex -->
+            <ul style="display: flex;">
                 <li>little a</li>
                 <li>little b</li>
                 <li>little c</li>
                 <li>little d</li>
             </ul>
             
-            <div>(div here)what we talked about are ......</div>
+            <div>(div here)what we talked about are ......
+                <p>test the child Selector</p>
+            </div>
             <div>we are not cover ...... and which will be mentioned in the next meeting</div>
             <p>recording for the meeting</p>
             <video controls>
@@ -51,7 +186,8 @@
             </h3>
             <h4>4/14/2023</h4>
             <p>peopel attended are :</p>
-            <ol>
+            <!-- layouts -->
+            <ol style="display: grid;">
                 <li>little a</li>
                 <li>little b</li>
                 <li>little c</li>
@@ -69,7 +205,8 @@
               </audio>
             <hr>
         </section>
-        <p>sign here after reading</p>
+        <!-- sizing here -->
+        <p style="height: auto; width: auto; max-width: ayto; min-width: auto">sign here after reading</p>
         <textarea>Please let me know if there are any problems</textarea>
         <form action="/action_page.php">
             <fieldset>
